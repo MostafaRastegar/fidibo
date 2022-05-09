@@ -9,6 +9,6 @@ const request = setupInterceptorsTo(
   }),
 );
 
-export const requestWithotAuth = setupInterceptorsTo(axios.create());
+export const requestWithoutAuth = setupInterceptorsTo(axios.create(), false);
 
 export default request;

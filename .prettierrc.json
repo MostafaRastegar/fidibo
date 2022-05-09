@@ -1,5 +1,19 @@
 {
   "printWidth": 80,
   "singleQuote": true,
-  "trailingComma": "all"
+  "trailingComma": "all",
+  "importOrder": [
+    "^react",
+    "^[next]",
+    "^[antd]",
+    "<THIRD_PARTY_MODULES>",
+    "^[store]",
+    "^store/(.*)$",
+    "^utils/(.*)$",
+    "^hooks/(.*)$",
+    "^helpers/(.*)$",
+    "^components/(.*)$",
+    "^constants/(.*)$",
+    "^[./]"
+  ]
 }

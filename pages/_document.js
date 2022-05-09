@@ -1,4 +1,4 @@
-import Document, { Head, Main, NextScript } from 'next/document';
+import Document, { Head, Main, NextScript, Html } from 'next/document';
 // Import styled components ServerStyleSheet
 import { ServerStyleSheet } from 'styled-components';
 
@@ -8,9 +8,10 @@ export default class MyDocument extends Document {
     const sheet = new ServerStyleSheet();
 
     // Step 2: Retrieve styles from components in the page
-    const page = renderPage((App) => (props) =>
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      sheet.collectStyles(<App {...props} />),
+    const page = renderPage(
+      (App) => (props) =>
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        sheet.collectStyles(<App {...props} />),
     );
 
     // Step 3: Extract the styles as <style> tags
@@ -22,9 +23,8 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html lang="EN">
+      <Html lang="EN">
         <Head>
-          <title>My page</title>
           {/* Step 5: Output the styles in the head  */}
           {this.props.styleTags}
         </Head>
@@ -32,7 +32,7 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }

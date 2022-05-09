@@ -69,3 +69,15 @@ export type RootStore = ReturnType<typeof rootReducer>;
 export type AnyObjectI = {
   [key: string]: any;
 };
+
+export interface StatusItemI {
+  loading: boolean;
+  data: any;
+  error: boolean;
+}
+
+export interface StatusObjI {
+  REQUEST: StatusItemI;
+  SUCCESS: StatusItemI;
+  FAILURE: StatusItemI;
+}
